@@ -1,0 +1,310 @@
+<div class="navbar">
+  <div class="nav-logo">Portfolio</div>
+  <ul class="nav-links">
+    <li>
+      <a (click)="scrollToSection('intro')" [class.active]="isActiveSection('intro')">Home</a>
+    </li>
+    <li>
+      <a (click)="scrollToSection('about')" [class.active]="isActiveSection('about')">About</a>
+    </li>
+    <li>
+      <a (click)="scrollToSection('projects')" [class.active]="isActiveSection('projects')">Projects</a>
+    </li>
+    <li>
+      <a (click)="scrollToSection('contact')" [class.active]="isActiveSection('contact')">Contact</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="home-container">
+  <!-- Intro Section -->
+  <section class="section intro-section" [class.active]="currentSectionIndex === 0">
+    <div class="intro-content">
+      <h1>Hi, I'm <span class="name">Abdul Hameed</span></h1>
+      <p>Frontend Developer | Building clean, fast web experiences.</p>
+      <button class="hire-btn" (click)="scrollToSection('about')">About Me</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section" [class.active]="currentSectionIndex === 1">
+    <div class="about-card">
+      <!-- Your existing about card content -->
+      <div class="about-left">
+        <pre class="code-block">
+<span class="keyword">const</span> aboutMe = &#123;
+  role: <span class="accent">"Full Stack & Java Developer"</span>,
+  mission: <span class="accent">"Build clean, scalable web solutions"</span>,
+  stack: <span class="accent">"Angular"</span>,
+  focus: <span class="accent">"Seamless UI & system integration"</span>
+&#125;
+        </pre>
+        <!-- Rest of your about content -->
+          <div class="skills">
+        <h3>Tech Stack</h3>
+        <div class="skills-grid">
+          <span>Angular / TypeScript</span>
+          <span>Java</span>
+          <span>Node.js / Express</span>
+          <span>MySQL / REST APIs</span>
+          <span>Responsive Architecture</span>
+        </div>
+      </div>
+
+      <div class="about-actions">
+        <button class="btn primary" (click)="downloadResume()" [disabled]="isDownloading"> {{ isDownloading ? 'Downloading...' : 'Download Resume' }}</button>
+        <button class="btn outline" (click)="scrollToSection('contact')">Let’s Connect</button>
+      </div>
+      </div>
+      <div class="about-right">
+        <!-- Your about right content -->
+          <div class="image-wrapper">
+          <img src="assets/image_abd.jpeg" alt="Profile Image">
+          <div class="image-glow"></div>
+          </div>
+
+      <div class="floating-tags">
+        <span class="tag">💡 Problem Solver</span>
+        <span class="tag">⚙️ System Thinker</span>
+        <span class="tag">🎨 UI Perfectionist</span>
+      </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Projects Section -->
+  <section class="section projects-section" [class.active]="currentSectionIndex === 2">
+    <div class="projects-header">
+      <h2>Featured Projects</h2>
+      <p>Real builds that blend logic, design, and precision.</p>
+    </div>
+    <div class="project-grid">
+
+      <!-- Your project cards -->
+          <div class="project-card">
+      <img src="assets/task.jpg" alt="TaskFlow Project">
+      <div class="project-info">
+        <h3>TaskFlow - The Task Management</h3>
+        <p>
+          A productivity platform that turns chaos into clarity. Built with Angular & Node.js, TaskFlow manages projects, teams, and progress — all in one clean dashboard.
+        </p>
+        <div class="tech-tags">
+          <span>Angular</span><span>Node.js</span><span>SQL</span>
+        </div>
+        <!-- <button class="project-view-btn">View Project</button> -->
+         <button class="project-view-btn" (click)="goToProjectsPage('taskflow')">View Project</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/ecommerce.jpg" alt="ShopNest Project">
+      <div class="project-info">
+        <h3>EShaw - An Eccommerce Website</h3>
+        <p>
+          A full-stack eCommerce platform where scalability meets simplicity. Users can shop, pay, and manage their accounts seamlessly — powered by Spring Boot & Angular.
+        </p>
+        <div class="tech-tags">
+          <span>PHP</span><span>Laravel</span><span>Angular</span>
+        </div>
+        <!-- <button class="project-view-btn">View Project</button> -->
+         <button class="project-view-btn" (click)="goToProjectsPage('eshaw')">View Project</button>
+      </div>
+    </div>
+
+    <!-- <div class="project-card">
+      <img src="assets/ui-snippets.jpg" alt="UI Snippets Project">
+      <div class="project-info">
+        <h3>UI Snippets</h3>
+        <p>
+          A curated library of reusable UI components for developers who love clean interfaces. Designed with TypeScript & SCSS for maximum flexibility.
+        </p>
+        <div class="tech-tags">
+          <span>TypeScript</span><span>SCSS</span><span>HTML</span>
+        </div>
+        <button class="project-view-btn">View Project</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/insight-analytics.jpg" alt="Insight Analytics Project">
+      <div class="project-info">
+        <h3>Insight Analytics</h3>
+        <p>
+          Data visualization done right. A dashboard that transforms raw metrics into beautiful charts with live updates and API integration.
+        </p>
+        <div class="tech-tags">
+          <span>Angular</span><span>Chart.js</span><span>REST API</span>
+        </div>
+        <button class="project-view-btn">View Project</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/devconnect.jpg" alt="DevConnect Project">
+      <div class="project-info">
+        <h3>DevConnect</h3>
+        <p>
+          A social hub for developers to collaborate, share projects, and learn together — built with Node.js, Express, and JWT authentication.
+        </p>
+        <div class="tech-tags">
+          <span>Node.js</span><span>Express</span><span>JWT</span>
+        </div>
+        <button class="project-view-btn">View Project</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/portfolio-ai.jpg" alt="AI Portfolio Builder">
+      <div class="project-info">
+        <h3>Portfolio AI</h3>
+        <p>
+          An AI-powered tool that helps devs auto-generate their own portfolio sites with dynamic templates and smart color themes.
+        </p>
+        <div class="tech-tags">
+          <span>Angular</span><span>OpenAI API</span><span>TypeScript</span>
+        </div>
+        <button class="project-view-btn">View Project</button>
+      </div>
+    </div> -->
+    </div>
+  </section>
+  
+
+  <!-- Contact Section -->
+  <section class="section contact-section" [class.active]="currentSectionIndex === 3">
+    <div class="contact-container">
+      <!-- Your contact form -->
+
+          <h2>Let’s Work Together</h2>
+          <p class="contact-intro">
+            Have an idea worth building or just want to say hello?  
+            I’m open for collaborations, freelancing, or full-time roles.
+          </p>
+
+          <form class="contact-form" (submit)="$event.preventDefault()">
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required />
+            </div>  
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <textarea rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="send-btn">Send Message</button>
+          </form>
+
+          <!-- <div class="contact-left">
+            <h5>CONTACT</h5>
+            <h2>Let’s Build Something Amazing Together!</h2>
+            <p>
+              Have a project in mind or want to collaborate?  
+              Feel free to reach out — I’m always excited to connect and explore new opportunities.
+            </p>
+
+            <div class="contact-info">
+              <p><strong>Email:</strong> ghaffarhussaing7@gmail.com</p>
+              <p><strong>Phone:</strong> +92 3360-8895-08</p>
+              <p><strong>Address:</strong> Quetta Town 18/A, Scheme 33, Near M9 Motorway, House No B/175</p>
+              <a 
+                href="https://maps.google.com?q=Quetta+Town+18/A,+Scheme+33,+Near+M9+Motorway,+House+No+B/175"
+                target="_blank" 
+                class="map-link"
+              >
+                Open Map →
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <form class="contact-form" (submit)="$event.preventDefault()">
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+              <input type="text" placeholder="Subject" required />
+              <textarea rows="4" placeholder="Your Message" required></textarea>
+              <button type="submit" class="send-btn">Send Message</button>
+            </form>
+          </div> -->
+
+          <div class="contact-socials">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/abdulhameed06" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="http://mailto:ah303130@gmail.com">Email</a>
+          </div>
+    </div>
+    <!-- CONDITIONAL FOOTER (only visible on contact section) -->
+<footer class="static-footer" [class.visible]="isFooterVisible">
+  <div class="footer-container">
+    <!-- Main Footer Content -->
+    <div class="footer-content">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <h3>Portfolio</h3>
+        <p>
+          Building digital experiences that blend creativity with functionality. 
+          Let's create something amazing together.
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/" target="_blank" title="GitHub">📂</a>
+          <a href="https://linkedin.com/in/abdulhameed06" target="_blank" title="LinkedIn">💼</a>
+          <a href="https://twitter.com/" target="_blank" title="Twitter">🐦</a>
+          <a href="http://mailto:ah303130@gmail.com" title="Email">✉️</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a (click)="scrollToSection('intro')">Home</a></li>
+            <li><a (click)="scrollToSection('about')">About</a></li>
+            <li><a (click)="scrollToSection('projects')">Projects</a></li>
+            <li><a (click)="scrollToSection('contact')">Contact</a></li>
+          </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Software Development</a></li>
+          <li><a href="#">Frontend Solutions</a></li>
+          <li><a href="#">Mobile Application Development</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-newsletter">
+        <h4>Stay Updated</h4>
+        <p style="color: #ccc; margin-bottom: 1rem;">Get the latest updates on my work and projects.</p>
+        <form class="newsletter-form" (submit)="$event.preventDefault()">
+          <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+          <button type="submit" class="subscribe-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        © 2024 Abdul Hameed. All rights reserved.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookies</a>
+      </div>
+      <button class="back-to-top" (click)="scrollToTop()">
+        ↑ Back to Top
+      </button>
+    </div>
+  </div>
+</footer>
+  </section>
+</div>
+
