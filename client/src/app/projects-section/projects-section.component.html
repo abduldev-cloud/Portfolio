@@ -1,0 +1,177 @@
+<section class="section projects-section">
+  
+
+  <!-- Specific Project Detail View -->
+  <div *ngIf="!showAllProjects && selectedProject" class="project-detail-view">
+    
+    <!-- Back Button -->
+    <div class="back-nav">
+      <button class="back-btn" (click)="showAllProjectsView()">
+        ← Back to All Projects
+      </button>
+    </div>
+
+    <!-- TaskFlow Project Detail -->
+    <div *ngIf="selectedProject === 'taskflow'" class="project-detail-container">
+      <div class="project-hero">
+        <div class="hero-content">
+          <h1>TaskFlow - Task Management</h1>
+          <p class="hero-subtitle">A productivity platform that turns chaos into clarity</p>
+          <div class="project-links">
+            <a href="https://your-taskflow-demo.com" target="_blank" class="btn primary">Live Demo</a>
+            <a href="https://github.com/yourusername/taskflow" target="_blank" class="btn outline">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/task.jpg" alt="TaskFlow Project">
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="content-section">
+          <h2>About This Project</h2>
+          <p>TaskFlow is a comprehensive task management application designed to streamline project workflows. It features real-time updates, team collaboration, progress tracking, and intuitive dashboard analytics that help teams stay organized and productive.</p>
+        </div>
+
+        <div class="content-section">
+          <h2>Technologies Used</h2>
+          <div class="tech-tags large">
+            <!-- <span><img src="assets/html.png" alt="HTML"></span> -->
+            <!-- <span><img src="assets/css.png" alt="CSS"></span> -->
+            <span><img src="assets/angular.png" alt="Angular"></span>
+            <span><img src="assets/node.png" alt="Node"></span>
+            <span><img src="assets/express-js.jpg" alt="Express"></span>
+            <span><img src="assets/bootstrap.png" alt="Bootstrap"></span>
+            <span><img src="assets/sql.png" alt="SQL"></span>
+            <span><img src="assets/typescript.png" alt="Typescript"></span>
+            <!-- <span><img src="assets/websocket.png" alt="Websocket"></span> -->
+            <!-- <span>JWT</span> -->
+            <span><img src="assets/rest_api.png" alt="Rest API"></span>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2>Key Features</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <h3>Real-time Updates</h3>
+              <p>Instant synchronization across all team members with live notifications</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👥</div>
+              <h3>Team Collaboration</h3>
+              <p>Seamless team communication, task assignment, and comment threads</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📈</div>
+              <h3>Progress Tracking</h3>
+              <p>Visual progress indicators, burn-down charts, and performance analytics</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📎</div>
+              <h3>File Management</h3>
+              <p>Attach files, documents, and images directly to tasks and projects</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2>Project Challenges & Solutions</h2>
+          <div class="challenge-solution">
+            <div class="challenge">
+              <h4>🚧 Challenge</h4>
+              <p>Implementing real-time updates across multiple users while maintaining data consistency and application performance.</p>
+            </div>
+            <div class="solution">
+              <h4>💡 Solution</h4>
+              <p>Used WebSockets for real-time communication, implemented optimistic UI updates for better user experience, and used database transactions to ensure data integrity across concurrent operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EShaw Project Detail -->
+    <div *ngIf="selectedProject === 'eshaw'" class="project-detail-container">
+      <div class="project-hero">
+        <div class="hero-content">
+          <h1>EShaw - Ecommerce Website</h1>
+          <p class="hero-subtitle">A full-stack eCommerce platform where scalability meets simplicity</p>
+          <div class="project-links">
+            <a href="https://your-eshaw-demo.com" target="_blank" class="btn primary">Live Demo</a>
+            <a href="https://github.com/yourusername/eshaw" target="_blank" class="btn outline">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/ecommerce.jpg" alt="EShaw Project">
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="content-section">
+          <h2>About This Project</h2>
+          <p>EShaw is a complete eCommerce solution built from the ground up with scalability in mind. It features user authentication, product catalog management, shopping cart functionality, secure payment integration, and a comprehensive admin dashboard for inventory and order management.</p>
+        </div>
+
+        <div class="content-section">
+          <h2>Technologies Used</h2>
+          <div class="tech-tags large">
+            <span><img src="assets/html.png" alt="HTML"></span>
+            <span><img src="assets/css.png" alt="CSS"></span>
+            <span><img src="assets/bootstrap.png" alt="Bootstrap"></span>
+            <span><img src="assets/php.png" alt="PHP"></span>
+            <span><img src="assets/laarvel.png" alt="Laravel"></span>
+            <span><img src="assets/angular.png" alt="Angular"></span>
+            <span><img src="assets/sql.png" alt="SQL"></span>
+            <!-- <span>JWT</span> -->
+            <span><img src="assets/rest_api.png" alt="Rest API"></span>
+            <!-- <span>Payment Gateway</span> -->
+            <!-- <span>Redis</span> -->
+            <!-- <span>Docker</span> -->
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2>Key Features</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🛒</div>
+              <h3>Shopping Cart</h3>
+              <p>Advanced cart functionality with persistent storage and guest checkout options</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔐</div>
+              <h3>User Authentication</h3>
+              <p>Secure login, registration, and password recovery system with JWT tokens</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💳</div>
+              <h3>Payment Integration</h3>
+              <p>Multiple payment gateway support with secure transaction processing</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📦</div>
+              <h3>Order Management</h3>
+              <p>Complete order tracking, inventory management, and admin dashboard</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2>Project Challenges & Solutions</h2>
+          <div class="challenge-solution">
+            <div class="challenge">
+              <h4>🚧 Challenge</h4>
+              <p>Handling concurrent user orders, inventory management, and preventing race conditions during high traffic periods.</p>
+            </div>
+            <div class="solution">
+              <h4>💡 Solution</h4>
+              <p>Implemented database transactions with proper isolation levels, used Redis for caching frequently accessed data, and implemented inventory locking mechanisms to prevent overselling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
