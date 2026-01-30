@@ -1,9 +1,9 @@
 <section class="section projects-section">
-  
+
 
   <!-- Specific Project Detail View -->
   <div *ngIf="!showAllProjects && selectedProject" class="project-detail-view">
-    
+
     <!-- Back Button -->
     <div class="back-nav">
       <button class="back-btn" (click)="showAllProjectsView()">
@@ -19,61 +19,199 @@
           <p class="hero-subtitle">A productivity platform that turns chaos into clarity</p>
           <div class="project-links">
             <a href="https://your-taskflow-demo.com" target="_blank" class="btn primary">Live Demo</a>
-            <a href="https://github.com/yourusername/taskflow" target="_blank" class="btn outline">GitHub</a>
+            <a href="https://github.com/abduldev-cloud/Task-Management" target="_blank" class="btn outline">GitHub</a>
           </div>
         </div>
         <div class="hero-image">
           <img src="assets/task.jpg" alt="TaskFlow Project">
         </div>
       </div>
-      
+
       <div class="project-content">
+        <!-- Project Overview Stats -->
+        <div class="project-stats">
+          <div class="stat-item">
+            <span class="stat-number">1.5 months</span>
+            <span class="stat-label">Development Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Tasks Managed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects Created</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">75+</span>
+            <span class="stat-label">Active Users</span>
+          </div>
+        </div>
+
         <div class="content-section">
           <h2>About This Project</h2>
-          <p>TaskFlow is a comprehensive task management application designed to streamline project workflows. It features real-time updates, team collaboration, progress tracking, and intuitive dashboard analytics that help teams stay organized and productive.</p>
+          <p>TaskFlow is a comprehensive task management platform I developed to help teams organize, track, and
+            complete their work efficiently. Built with Angular and Node.js, it provides a modern, intuitive interface
+            for managing projects and tasks.</p>
+          <p>The application features a powerful Kanban board, real-time collaboration tools, advanced filtering and
+            search capabilities, and detailed analytics dashboards. Teams can create projects, assign tasks, set
+            deadlines, track progress, and communicate seamlessly within the platform.</p>
+          <p>Key innovations include drag-and-drop task management, customizable workflows, time tracking integration,
+            and automated notifications to keep everyone aligned and productive.</p>
         </div>
 
         <div class="content-section">
           <h2>Technologies Used</h2>
           <div class="tech-tags large">
-            <!-- <span><img src="assets/html.png" alt="HTML"></span> -->
-            <!-- <span><img src="assets/css.png" alt="CSS"></span> -->
             <span><img src="assets/angular.png" alt="Angular"></span>
             <span><img src="assets/node.png" alt="Node"></span>
             <span><img src="assets/express-js.jpg" alt="Express"></span>
             <span><img src="assets/bootstrap.png" alt="Bootstrap"></span>
             <span><img src="assets/sql.png" alt="SQL"></span>
             <span><img src="assets/typescript.png" alt="Typescript"></span>
-            <!-- <span><img src="assets/websocket.png" alt="Websocket"></span> -->
-            <!-- <span>JWT</span> -->
             <span><img src="assets/rest_api.png" alt="Rest API"></span>
           </div>
         </div>
 
+        <!-- Detailed Features -->
         <div class="content-section">
           <h2>Key Features</h2>
           <div class="features-grid">
             <div class="feature-item">
-              <div class="feature-icon">📊</div>
-              <h3>Real-time Updates</h3>
-              <p>Instant synchronization across all team members with live notifications</p>
+              <div class="feature-icon">📋</div>
+              <h3>Kanban Board</h3>
+              <p>Drag-and-drop task management with customizable columns and visual workflow organization</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">👥</div>
               <h3>Team Collaboration</h3>
-              <p>Seamless team communication, task assignment, and comment threads</p>
+              <p>Real-time updates, task comments, @mentions, and seamless team communication</p>
             </div>
             <div class="feature-item">
-              <div class="feature-icon">📈</div>
-              <h3>Progress Tracking</h3>
-              <p>Visual progress indicators, burn-down charts, and performance analytics</p>
+              <div class="feature-icon">⏱️</div>
+              <h3>Time Tracking</h3>
+              <p>Built-in timer for accurate time logging and productivity analysis per task</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🎯</div>
+              <h3>Sprint Planning</h3>
+              <p>Agile sprint management with velocity tracking and burndown charts</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">�</div>
+              <h3>Custom Workflows</h3>
+              <p>Create custom task statuses, transitions, and automated workflow rules</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">📎</div>
-              <h3>File Management</h3>
-              <p>Attach files, documents, and images directly to tasks and projects</p>
+              <h3>File Attachments</h3>
+              <p>Upload and share documents, images, and files directly within tasks</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💬</div>
+              <h3>Comments & Mentions</h3>
+              <p>Task-level discussions with @mentions for team collaboration</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">�</div>
+              <h3>Smart Notifications</h3>
+              <p>Customizable email and in-app alerts for task updates and deadlines</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <h3>Analytics Dashboard</h3>
+              <p>Visual charts showing project progress, team performance, and productivity metrics</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">�</div>
+              <h3>Responsive Design</h3>
+              <p>Fully responsive interface that works seamlessly on desktop, tablet, and mobile devices</p>
             </div>
           </div>
+        </div>
+
+        <!-- Technical Architecture -->
+        <div class="content-section">
+          <h2>Technical Architecture</h2>
+          <div class="architecture-description">
+            <h4>Frontend Architecture</h4>
+            <ul>
+              <li><strong>Component-based Design:</strong> Modular Angular components for boards, tasks, and dashboards
+              </li>
+              <li><strong>State Management:</strong> NgRx for centralized state management and real-time updates</li>
+              <li><strong>Drag & Drop:</strong> Angular CDK for smooth drag-and-drop functionality</li>
+              <li><strong>Responsive Design:</strong> Bootstrap and custom CSS for mobile-first layouts</li>
+              <li><strong>TypeScript:</strong> Strong typing for better code quality and maintainability</li>
+              <li><strong>Routing:</strong> Angular Router with lazy loading for optimal performance</li>
+            </ul>
+
+            <h4>Backend Architecture</h4>
+            <ul>
+              <li><strong>RESTful API:</strong> Express.js with organized MVC route structure</li>
+              <li><strong>Authentication:</strong> JWT-based secure authentication with refresh tokens</li>
+              <li><strong>Real-time Updates:</strong> Socket.IO for live task updates across users</li>
+              <li><strong>Middleware:</strong> Request validation, error handling, and authentication checks</li>
+              <li><strong>Email Service:</strong> NodeMailer for automated notifications and reminders</li>
+              <li><strong>File Upload:</strong> Multer for handling file attachments</li>
+            </ul>
+
+            <h4>Database Design</h4>
+            <ul>
+              <li><strong>Users Table:</strong> User authentication, profiles, and team memberships</li>
+              <li><strong>Projects Table:</strong> Project information with owner and team associations</li>
+              <li><strong>Tasks Table:</strong> Task details with status, priority, and assignment tracking</li>
+              <li><strong>Comments Table:</strong> Task comments with user mentions and timestamps</li>
+              <li><strong>Time Logs:</strong> Time tracking entries linked to tasks and users</li>
+              <li><strong>Relationships:</strong> Foreign keys and indexes for optimal query performance</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Screenshots Section -->
+        <div class="content-section">
+          <h2>Project Screenshots</h2>
+          <p class="screenshot-note">📸 Screenshots showcase the Kanban board, task details, analytics dashboard, and
+            team collaboration features</p>
+          <div class="screenshots-grid">
+            <div class="screenshot-item">
+              <img src="assets/task-dashboard.jpg" alt="Kanban Board">
+              <p>Dashboard View</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/task-create.jpg" alt="Task Detail">
+              <p>Task Creation Page</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/task-user.jpg" alt="Dashboard">
+              <p>Dashboard Page</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/task-list.jpg" alt="Task List">
+              <p>Task List Page</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Outcomes -->
+        <div class="content-section">
+          <h2>What I Learned</h2>
+          <ul class="learning-list">
+            <li><strong>Full-Stack Development:</strong> Gained experience building complete task management solution
+              with Angular and Node.js</li>
+            <li><strong>Real-time Communication:</strong> Implemented WebSocket connections using Socket.IO for live
+              updates</li>
+            <li><strong>State Management:</strong> Mastered NgRx for managing complex application state</li>
+            <li><strong>Drag & Drop:</strong> Implemented smooth drag-and-drop using Angular CDK</li>
+            <li><strong>Database Design:</strong> Designed relational database schema for task management workflows</li>
+            <li><strong>Authentication & Security:</strong> Implemented JWT authentication with role-based access
+              control</li>
+            <li><strong>API Development:</strong> Built RESTful APIs with proper error handling and validation</li>
+            <li><strong>TypeScript:</strong> Leveraged TypeScript for type-safe code and better developer experience
+            </li>
+            <li><strong>Agile Methodologies:</strong> Learned sprint planning, velocity tracking, and agile workflows
+            </li>
+            <li><strong>User Experience:</strong> Focused on creating intuitive interfaces for productivity tools</li>
+          </ul>
         </div>
 
         <div class="content-section">
@@ -81,11 +219,52 @@
           <div class="challenge-solution">
             <div class="challenge">
               <h4>🚧 Challenge</h4>
-              <p>Implementing real-time updates across multiple users while maintaining data consistency and application performance.</p>
+              <p>Implementing real-time updates across multiple users while maintaining data consistency, handling
+                concurrent task updates, and ensuring smooth drag-and-drop performance.</p>
             </div>
             <div class="solution">
               <h4>💡 Solution</h4>
-              <p>Used WebSockets for real-time communication, implemented optimistic UI updates for better user experience, and used database transactions to ensure data integrity across concurrent operations.</p>
+              <p>Used Socket.IO for real-time WebSocket connections, implemented optimistic UI updates for better user
+                experience, and used database transactions to ensure data integrity. Added debouncing for drag-and-drop
+                operations and conflict resolution for concurrent edits.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Enhancements -->
+        <div class="content-section">
+          <h2>Future Enhancements</h2>
+          <div class="future-features">
+            <div class="future-item">
+              <span class="future-icon">🤖</span>
+              <h4>AI Task Prioritization</h4>
+              <p>Implement machine learning to automatically prioritize tasks based on deadlines, dependencies, and team
+                capacity</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📱</span>
+              <h4>Mobile Application</h4>
+              <p>Develop native iOS and Android apps for on-the-go task management</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🔗</span>
+              <h4>Third-party Integrations</h4>
+              <p>Integrate with Slack, GitHub, Jira, and other productivity tools</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📅</span>
+              <h4>Calendar Integration</h4>
+              <p>Sync tasks with Google Calendar and Outlook for unified scheduling</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📊</span>
+              <h4>Advanced Reporting</h4>
+              <p>Provide detailed reports on team productivity, project timelines, and resource allocation</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🎨</span>
+              <h4>Custom Themes</h4>
+              <p>Allow users to customize board colors, themes, and layout preferences</p>
             </div>
           </div>
         </div>
@@ -100,18 +279,46 @@
           <p class="hero-subtitle">A full-stack eCommerce platform where scalability meets simplicity</p>
           <div class="project-links">
             <a href="https://your-eshaw-demo.com" target="_blank" class="btn primary">Live Demo</a>
-            <a href="https://github.com/yourusername/eshaw" target="_blank" class="btn outline">GitHub</a>
+            <a href="https://github.com/abduldev-cloud/E-commerce-Website" target="_blank"
+              class="btn outline">GitHub</a>
           </div>
         </div>
         <div class="hero-image">
           <img src="assets/ecommerce.jpg" alt="EShaw Project">
         </div>
       </div>
-      
+
       <div class="project-content">
+        <!-- Project Overview Stats -->
+        <div class="project-stats">
+          <div class="stat-item">
+            <span class="stat-number">3 months</span>
+            <span class="stat-label">Development Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Products Listed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Orders Processed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Active Users</span>
+          </div>
+        </div>
+
         <div class="content-section">
           <h2>About This Project</h2>
-          <p>EShaw is a complete eCommerce solution built from the ground up with scalability in mind. It features user authentication, product catalog management, shopping cart functionality, secure payment integration, and a comprehensive admin dashboard for inventory and order management.</p>
+          <p>EShaw is a full-featured e-commerce platform I developed to provide a seamless online shopping experience.
+            Built with PHP Laravel backend and Angular frontend, it offers a complete solution for managing products,
+            orders, and customer relationships.</p>
+          <p>The platform features advanced product catalog management, secure payment processing, real-time inventory
+            tracking, and a comprehensive admin dashboard. With support for multiple payment gateways and responsive
+            design, EShaw delivers a professional shopping experience across all devices.</p>
+          <p>Key highlights include intelligent search and filtering, wishlist functionality, order tracking, and
+            automated email notifications for order updates and promotions.</p>
         </div>
 
         <div class="content-section">
@@ -124,38 +331,158 @@
             <span><img src="assets/laarvel.png" alt="Laravel"></span>
             <span><img src="assets/angular.png" alt="Angular"></span>
             <span><img src="assets/sql.png" alt="SQL"></span>
-            <!-- <span>JWT</span> -->
             <span><img src="assets/rest_api.png" alt="Rest API"></span>
-            <!-- <span>Payment Gateway</span> -->
-            <!-- <span>Redis</span> -->
-            <!-- <span>Docker</span> -->
           </div>
         </div>
 
+        <!-- Detailed Features -->
         <div class="content-section">
           <h2>Key Features</h2>
           <div class="features-grid">
             <div class="feature-item">
+              <div class="feature-icon">🛍️</div>
+              <h3>Product Catalog</h3>
+              <p>Advanced product management with categories, filters, search, and detailed product pages with image
+                galleries</p>
+            </div>
+            <div class="feature-item">
               <div class="feature-icon">🛒</div>
               <h3>Shopping Cart</h3>
-              <p>Advanced cart functionality with persistent storage and guest checkout options</p>
+              <p>Persistent cart functionality with quantity updates, price calculations, and guest checkout option</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">🔐</div>
               <h3>User Authentication</h3>
-              <p>Secure login, registration, and password recovery system with JWT tokens</p>
+              <p>Secure registration, login, password recovery, and profile management with JWT authentication</p>
             </div>
             <div class="feature-item">
-              <div class="feature-icon">💳</div>
-              <h3>Payment Integration</h3>
-              <p>Multiple payment gateway support with secure transaction processing</p>
+              <div class="feature-icon">�</div>
+              <h3>Payment Gateway</h3>
+              <p>Integrated payment processing with Stripe/PayPal for secure transactions and order confirmation</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">📦</div>
               <h3>Order Management</h3>
-              <p>Complete order tracking, inventory management, and admin dashboard</p>
+              <p>Complete order tracking from placement to delivery with status updates and order history</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👤</div>
+              <h3>User Profiles</h3>
+              <p>Customer accounts with saved addresses, payment methods, order history, and wishlist</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⚙️</div>
+              <h3>Admin Dashboard</h3>
+              <p>Comprehensive backend for managing products, inventory, orders, customers, and sales analytics</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⭐</div>
+              <h3>Product Reviews</h3>
+              <p>Customer rating and review system with moderation and verified purchase badges</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">❤️</div>
+              <h3>Wishlist</h3>
+              <p>Save favorite products for later purchase with easy add-to-cart functionality</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🎟️</div>
+              <h3>Discount Codes</h3>
+              <p>Promotional code system with percentage and fixed amount discounts for marketing campaigns</p>
             </div>
           </div>
+        </div>
+
+        <!-- Technical Architecture -->
+        <div class="content-section">
+          <h2>Technical Architecture</h2>
+          <div class="architecture-description">
+            <h4>Frontend Architecture</h4>
+            <ul>
+              <li><strong>Component-based Design:</strong> Modular Angular components for product listings, cart,
+                checkout, and user profiles</li>
+              <li><strong>State Management:</strong> Angular services for managing cart state and user authentication
+              </li>
+              <li><strong>Responsive Design:</strong> Bootstrap framework for mobile-first responsive layouts</li>
+              <li><strong>API Integration:</strong> HTTP client for consuming Laravel RESTful APIs</li>
+              <li><strong>Routing:</strong> Angular Router with lazy loading for optimized performance</li>
+            </ul>
+
+            <h4>Backend Architecture</h4>
+            <ul>
+              <li><strong>MVC Pattern:</strong> Laravel framework following Model-View-Controller architecture</li>
+              <li><strong>RESTful API:</strong> Well-structured API endpoints for all e-commerce operations</li>
+              <li><strong>Authentication:</strong> Laravel Passport for API authentication with JWT tokens</li>
+              <li><strong>Payment Processing:</strong> Stripe and PayPal SDK integration for secure payments</li>
+              <li><strong>Email Service:</strong> Laravel Mail for order confirmations and notifications</li>
+              <li><strong>Middleware:</strong> Request validation, authentication checks, and CORS handling</li>
+            </ul>
+
+            <h4>Database Design</h4>
+            <ul>
+              <li><strong>Users Table:</strong> Customer and admin authentication with roles and permissions</li>
+              <li><strong>Products Table:</strong> Product catalog with categories, pricing, and inventory</li>
+              <li><strong>Orders Table:</strong> Order records with status tracking and payment information</li>
+              <li><strong>Order Items:</strong> Many-to-many relationship between orders and products</li>
+              <li><strong>Reviews Table:</strong> Product reviews linked to users and products</li>
+              <li><strong>Indexing:</strong> Optimized indexes on frequently queried columns for performance</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Screenshots Section -->
+        <div class="content-section">
+          <h2>Project Screenshots</h2>
+          <p class="screenshot-note">📸 Screenshots showcase the product catalog, shopping cart, checkout process, and
+            admin dashboard</p>
+          <div class="screenshots-grid">
+            <div class="screenshot-item">
+              <img src="assets/eshaw-dash.png" alt="Homepage">
+              <p>Homepage & Product Catalog</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/eshaw-dashboard.png" alt="Product Detail">
+              <p>Admin Page and Product Detail Page</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/eshaw-cart.png" alt="Shopping Cart">
+              <p>Shopping Cart</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/eshaw-category.png" alt="Admin Dashboard">
+              <p>Popular Category</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/eshaw-checkput.png" alt="Admin Dashboard">
+              <p>Checkout</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Outcomes -->
+        <div class="content-section">
+          <h2>What I Learned</h2>
+          <ul class="learning-list">
+            <li><strong>Full-Stack E-commerce:</strong> Gained comprehensive experience in building complete e-commerce
+              solutions from scratch</li>
+            <li><strong>Laravel Framework:</strong> Mastered Laravel's MVC architecture, Eloquent ORM, and middleware
+              system</li>
+            <li><strong>Payment Integration:</strong> Learned to integrate and secure payment gateways like Stripe and
+              PayPal</li>
+            <li><strong>Database Optimization:</strong> Implemented efficient database queries and indexing for large
+              product catalogs</li>
+            <li><strong>Shopping Cart Logic:</strong> Developed complex cart functionality with session management and
+              persistence</li>
+            <li><strong>Order Processing:</strong> Built complete order workflow from cart to payment to fulfillment
+            </li>
+            <li><strong>Admin Panel Development:</strong> Created comprehensive admin dashboards for business management
+            </li>
+            <li><strong>Security Best Practices:</strong> Implemented secure authentication, payment processing, and
+              data protection</li>
+            <li><strong>API Development:</strong> Designed and built RESTful APIs following industry standards</li>
+            <li><strong>User Experience:</strong> Focused on creating intuitive shopping flows and responsive design
+            </li>
+          </ul>
         </div>
 
         <div class="content-section">
@@ -163,15 +490,321 @@
           <div class="challenge-solution">
             <div class="challenge">
               <h4>🚧 Challenge</h4>
-              <p>Handling concurrent user orders, inventory management, and preventing race conditions during high traffic periods.</p>
+              <p>Handling concurrent user orders, managing inventory to prevent overselling, and ensuring secure payment
+                processing during high traffic periods.</p>
             </div>
             <div class="solution">
               <h4>💡 Solution</h4>
-              <p>Implemented database transactions with proper isolation levels, used Redis for caching frequently accessed data, and implemented inventory locking mechanisms to prevent overselling.</p>
+              <p>Implemented database transactions with proper isolation levels, used Redis for caching frequently
+                accessed product data, and added inventory locking mechanisms. Integrated payment webhooks for reliable
+                transaction confirmation and implemented queue system for order processing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Enhancements -->
+        <div class="content-section">
+          <h2>Future Enhancements</h2>
+          <div class="future-features">
+            <div class="future-item">
+              <span class="future-icon">🤖</span>
+              <h4>AI Product Recommendations</h4>
+              <p>Implement machine learning algorithms to suggest products based on browsing history and purchase
+                patterns</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📱</span>
+              <h4>Mobile App</h4>
+              <p>Develop native mobile applications for iOS and Android for better mobile shopping experience</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🌐</span>
+              <h4>Multi-vendor Support</h4>
+              <p>Transform into a marketplace platform allowing multiple vendors to sell their products</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">💬</span>
+              <h4>Live Chat Support</h4>
+              <p>Add real-time customer support chat for instant assistance during shopping</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📊</span>
+              <h4>Advanced Analytics</h4>
+              <p>Provide detailed sales analytics, customer insights, and inventory forecasting</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🚚</span>
+              <h4>Shipping Integration</h4>
+              <p>Integrate with shipping carriers for real-time rates and automated label generation</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
+    <!-- Food Rescue Network Project Detail -->
+    <div *ngIf="selectedProject === 'food-rescue'" class="project-detail-container">
+      <div class="project-hero">
+        <div class="hero-content">
+          <h1>SavePlate - Food Rescue Network Management</h1>
+          <p class="hero-subtitle">A Platform for Food Rescue Network</p>
+          <div class="project-links">
+            <a href="https://saveplates.vercel.app" target="_blank" class="btn primary">Live Demo</a>
+            <a href="https://github.com/abduldev-cloud/food-rescue-frontend" target="_blank"
+              class="btn outline">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/food.png" alt="TaskFlow Project">
+        </div>
+      </div>
+
+      <div class="project-content">
+        <!-- Project Overview Stats -->
+        <div class="project-stats">
+          <div class="stat-item">
+            <span class="stat-number">1 month</span>
+            <span class="stat-label">Development Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Sample Local Donations Facilitated</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Meals Saved</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">Active Users</span>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2>About This Project</h2>
+          <p>SavePlate is a social impact platform I developed to tackle food waste and hunger simultaneously. The
+            platform connects restaurants, grocery stores, and individual donors with local food banks and shelters in
+            real-time.</p>
+          <p>Built with React, Node.js, and MySQL, SavePlate features intelligent matching algorithms that connect
+            donors with nearby recipients based on food type, quantity, and location. The platform has facilitated over
+            500 donations, saving an estimated 10,000+ meals from going to waste.</p>
+          <p>Key innovations include real-time geolocation matching, automated notifications for time-sensitive
+            donations, and a comprehensive impact dashboard that shows donors the direct impact of their contributions.
+          </p>
+        </div>
+
+        <div class="content-section">
+          <h2>Technologies Used</h2>
+          <div class="tech-tags large">
+            <span><img src="assets/react.png" alt="React"></span>
+            <span><img src="assets/node.png" alt="Node"></span>
+            <span><img src="assets/express-js.jpg" alt="Express"></span>
+            <span><img src="assets/bootstrap.png" alt="Bootstrap"></span>
+            <span><img src="assets/sql.png" alt="SQL"></span>
+          </div>
+        </div>
+
+        <!-- Detailed Features -->
+        <div class="content-section">
+          <h2>Key Features</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🏪</div>
+              <h3>Donor Registration</h3>
+              <p>Easy signup for restaurants, grocery stores, and individuals with profile management and donation
+                history</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏛️</div>
+              <h3>NGO/Shelter Portal</h3>
+              <p>Dedicated dashboard for food banks and shelters to manage incoming donations and track inventory</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🤝</div>
+              <h3>Real-time Matching</h3>
+              <p>Intelligent matching of donors with nearby recipients based on location, food type, and availability
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📅</div>
+              <h3>Pickup Scheduling</h3>
+              <p>Calendar-based pickup coordination with automated reminders and route optimization</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📦</div>
+              <h3>Food Inventory Tracking</h3>
+              <p>Track food types, quantities, expiration dates, and nutritional information</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <h3>Impact Dashboard</h3>
+              <p>Visualize meals saved, waste reduced, and environmental impact with interactive charts</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👥</div>
+              <h3>Volunteer Management</h3>
+              <p>Coordinate volunteer drivers and helpers with scheduling and task assignment</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📜</div>
+              <h3>Donation History</h3>
+              <p>Complete audit trail of all donations with downloadable reports and analytics</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔔</div>
+              <h3>Smart Notifications</h3>
+              <p>Instant email and SMS alerts for new donations, pickup reminders, and status updates</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🗺️</div>
+              <h3>Geolocation Services</h3>
+              <p>Interactive map view showing nearby donors and recipients with distance calculation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Architecture -->
+        <div class="content-section">
+          <h2>Technical Architecture</h2>
+          <div class="architecture-description">
+            <h4>Frontend Architecture</h4>
+            <ul>
+              <li><strong>Component-based Design:</strong> Modular React components for reusability and maintainability
+              </li>
+              <li><strong>State Management:</strong> React Context API for global state management</li>
+              <li><strong>Responsive Design:</strong> Mobile-first approach using Bootstrap grid system</li>
+              <li><strong>API Integration:</strong> Axios for RESTful API consumption with error handling</li>
+              <li><strong>Routing:</strong> React Router for seamless navigation between pages</li>
+            </ul>
+
+            <h4>Backend Architecture</h4>
+            <ul>
+              <li><strong>RESTful API:</strong> Express.js with organized MVC route structure</li>
+              <li><strong>Authentication:</strong> JWT-based secure authentication with password hashing</li>
+              <li><strong>Middleware:</strong> Request validation, error handling, and logging middleware</li>
+              <li><strong>Email Service:</strong> NodeMailer integration for automated notifications</li>
+              <li><strong>File Upload:</strong> Multer for handling image uploads and storage</li>
+            </ul>
+
+            <h4>Database Design</h4>
+            <ul>
+              <li><strong>Users Table:</strong> Donor and NGO authentication and profile data</li>
+              <li><strong>Donations Table:</strong> Food donation records with status tracking</li>
+              <li><strong>Pickups Table:</strong> Scheduled pickup information and volunteer assignments</li>
+              <li><strong>Relationships:</strong> Foreign keys and proper indexing for optimal query performance</li>
+              <li><strong>Normalization:</strong> 3NF database design to eliminate redundancy</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Screenshots Section -->
+        <div class="content-section">
+          <h2>Project Screenshots</h2>
+          <p class="screenshot-note">📸 Screenshots showcase the donor dashboard, NGO portal, donation tracking, and
+            impact analytics</p>
+          <div class="screenshots-grid">
+            <div class="screenshot-item">
+              <img src="assets/food-dashboard.png" alt="Dashboard">
+              <p>Main Dashboard View</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/food-admin.png" alt="Donation Form">
+              <p>Admin Dashboard</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/food-ngo.png" alt="Donation Form">
+              <p>NGO Portal</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/food-donor.png" alt="Map View">
+              <p>Donor Portal</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Outcomes -->
+        <div class="content-section">
+          <h2>What I Learned</h2>
+          <ul class="learning-list">
+            <li><strong>Full-Stack Development:</strong> Gained hands-on experience in connecting React frontend with
+              Node.js backend seamlessly</li>
+            <li><strong>Database Design:</strong> Learned to design normalized MySQL schemas and optimize queries for
+              performance</li>
+            <li><strong>RESTful API Development:</strong> Built scalable APIs with proper error handling, validation,
+              and documentation</li>
+            <li><strong>Authentication & Security:</strong> Implemented JWT-based authentication and learned security
+              best practices</li>
+            <li><strong>State Management:</strong> Managed complex application state using React Context API</li>
+            <li><strong>Geolocation Services:</strong> Integrated mapping APIs and implemented distance-based matching
+              algorithms</li>
+            <li><strong>Email Integration:</strong> Set up automated email notifications using NodeMailer</li>
+            <li><strong>Responsive Design:</strong> Created mobile-friendly interfaces using Bootstrap and custom CSS
+            </li>
+            <li><strong>Version Control:</strong> Used Git for version control and collaborative development</li>
+            <li><strong>Problem Solving:</strong> Tackled real-world challenges like data consistency and real-time
+              updates</li>
+          </ul>
+        </div>
+
+        <div class="content-section">
+          <h2>Project Challenges & Solutions</h2>
+          <div class="challenge-solution">
+            <div class="challenge">
+              <h4>🚧 Challenge</h4>
+              <p>Implementing real-time matching between donors and NGOs while maintaining data consistency and ensuring
+                timely notifications for perishable food items.</p>
+            </div>
+            <div class="solution">
+              <h4>💡 Solution</h4>
+              <p>Implemented a polling mechanism for near real-time updates, used database transactions to ensure data
+                integrity, and integrated NodeMailer with SMS gateway for instant notifications. Also added expiration
+                time tracking to prioritize time-sensitive donations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Enhancements -->
+        <div class="content-section">
+          <h2>Future Enhancements</h2>
+          <div class="future-features">
+            <div class="future-item">
+              <span class="future-icon">🤖</span>
+              <h4>AI-Powered Recommendations</h4>
+              <p>Implement machine learning to predict donation patterns and suggest optimal matching based on
+                historical data</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📱</span>
+              <h4>Mobile Application</h4>
+              <p>Develop native iOS and Android apps for easier access and push notifications</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🌐</span>
+              <h4>Multi-language Support</h4>
+              <p>Add internationalization to reach diverse communities and expand global impact</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📊</span>
+              <h4>Advanced Analytics</h4>
+              <p>Provide detailed insights on food waste trends, donation patterns, and environmental impact metrics</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🔗</span>
+              <h4>Third-party Integrations</h4>
+              <p>Integrate with food delivery services and logistics platforms for automated pickup coordination</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🏆</span>
+              <h4>Gamification</h4>
+              <p>Add badges, leaderboards, and rewards to encourage more donations and community engagement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 </section>
