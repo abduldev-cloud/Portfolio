@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+
+  // Inject ThemeService at root so saved theme is applied on all pages
+  constructor(private themeService: ThemeService) { }
 }
