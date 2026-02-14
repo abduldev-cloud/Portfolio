@@ -20,52 +20,95 @@
     <li>
       <a (click)="scrollToSection('contact')" [class.active]="isActiveSection('contact')">Contact</a>
     </li>
+    <li class="theme-toggle-item">
+      <button class="theme-toggle-btn" (click)="toggleTheme()"
+        [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+        <span class="theme-icon">{{ isDarkMode ? '☀️' : '🌙' }}</span>
+      </button>
+    </li>
   </ul>
 </div>
 
 
+
 <div class="home-container">
+
+  <!-- Global Floating Particles (cover entire page) -->
+  <div class="particles global-particles">
+    <span class="particle" style="--size: 80px; --x: 10%; --y: 5%; --duration: 18s; --delay: 0s;"></span>
+    <span class="particle" style="--size: 40px; --x: 85%; --y: 8%; --duration: 22s; --delay: 2s;"></span>
+    <span class="particle" style="--size: 60px; --x: 70%; --y: 15%; --duration: 20s; --delay: 4s;"></span>
+    <span class="particle" style="--size: 30px; --x: 20%; --y: 18%; --duration: 16s; --delay: 1s;"></span>
+    <span class="particle" style="--size: 50px; --x: 50%; --y: 12%; --duration: 24s; --delay: 3s;"></span>
+    <span class="particle square" style="--size: 35px; --x: 30%; --y: 25%; --duration: 19s; --delay: 5s;"></span>
+    <span class="particle square" style="--size: 25px; --x: 75%; --y: 22%; --duration: 21s; --delay: 7s;"></span>
+    <span class="particle triangle" style="--size: 45px; --x: 60%; --y: 28%; --duration: 17s; --delay: 2s;"></span>
+    <!-- About / Skills area -->
+    <span class="particle" style="--size: 55px; --x: 12%; --y: 35%; --duration: 20s; --delay: 3s;"></span>
+    <span class="particle" style="--size: 35px; --x: 88%; --y: 40%; --duration: 18s; --delay: 6s;"></span>
+    <span class="particle square" style="--size: 28px; --x: 45%; --y: 45%; --duration: 22s; --delay: 1s;"></span>
+    <span class="particle triangle" style="--size: 40px; --x: 78%; --y: 50%; --duration: 16s; --delay: 4s;"></span>
+    <!-- Projects area -->
+    <span class="particle" style="--size: 65px; --x: 8%; --y: 58%; --duration: 19s; --delay: 2s;"></span>
+    <span class="particle" style="--size: 30px; --x: 92%; --y: 62%; --duration: 23s; --delay: 5s;"></span>
+    <span class="particle square" style="--size: 22px; --x: 55%; --y: 65%; --duration: 17s; --delay: 8s;"></span>
+    <!-- Contact area -->
+    <span class="particle" style="--size: 50px; --x: 15%; --y: 75%; --duration: 21s; --delay: 1s;"></span>
+    <span class="particle" style="--size: 40px; --x: 82%; --y: 80%; --duration: 18s; --delay: 4s;"></span>
+    <span class="particle triangle" style="--size: 35px; --x: 40%; --y: 85%; --duration: 20s; --delay: 6s;"></span>
+    <span class="particle square" style="--size: 45px; --x: 65%; --y: 90%; --duration: 15s; --delay: 3s;"></span>
+  </div>
+
   <!-- Intro Section -->
   <section class="section intro-section">
-    <div class="intro-content">
+
+
+    <div class="intro-content" data-aos="fade-up">
       <h1>Hi, I'm <span class="name">Abdul Hameed</span></h1>
-      <p>Frontend Developer | Building clean, fast web experiences.</p>
+      <p class="typed-text">{{ typedText }}<span class="cursor">|</span></p>
       <button class="hire-btn" (click)="scrollToSection('about')">About Me</button>
     </div>
   </section>
 
+
+
   <!-- About Section -->
   <section class="section about-section">
-    <div class="about-card">
+    <div class="about-card glass-card" data-aos="fade-up">
       <!-- Your existing about card content -->
       <div class="about-left">
-        <pre class="code-block">
+        <pre class="code-block" data-aos="fade-right" data-aos-delay="100">
 <span class="keyword">const</span> aboutMe = &#123;
-  role: <span class="accent">"Full Stack & Java Developer"</span>,
+  role: <span class="accent">"Full Stack &amp; Java Developer"</span>,
   mission: <span class="accent">"Build clean, scalable web solutions"</span>,
   stack: <span class="accent">"Angular"</span>,
-  focus: <span class="accent">"Seamless UI & system integration"</span>
+  focus: <span class="accent">"Seamless UI &amp; system integration"</span>
 &#125;
         </pre>
-        <!-- Rest of your about content -->
-        <div class="skills">
+        <!-- Enhanced Skills Section with Progress Bars -->
+        <div class="skills" data-aos="fade-right" data-aos-delay="200">
           <h3>Tech Stack</h3>
-          <div class="skills-grid">
-            <span>Angular / TypeScript</span>
-            <span>Java</span>
-            <span>Node.js / Express</span>
-            <span>MySQL / REST APIs</span>
-            <span>Responsive Architecture</span>
+          <div class="skills-list">
+            <div class="skill-item" *ngFor="let skill of skills; let i = index" [attr.data-aos]="'fade-right'"
+              [attr.data-aos-delay]="300 + (i * 100)">
+              <div class="skill-header">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-percentage">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="about-actions">
+        <div class="about-actions" data-aos="fade-right" data-aos-delay="600">
           <button class="btn primary" (click)="downloadResume()" [disabled]="isDownloading"> {{ isDownloading ?
             'Downloading...' : 'Download Resume' }}</button>
-          <button class="btn outline" (click)="scrollToSection('contact')">Let’s Connect</button>
+          <button class="btn outline" (click)="scrollToSection('contact')">Let's Connect</button>
         </div>
       </div>
-      <div class="about-right">
+      <div class="about-right" data-aos="fade-left" data-aos-delay="200">
         <!-- Your about right content -->
         <div class="image-wrapper">
           <img src="assets/abdul.png" alt="Profile Image">
@@ -83,186 +126,212 @@
 
 
 
+  <!-- Stats Counter Section -->
+  <section class="section stats-section" #statsSection>
+    <div class="stats-container" data-aos="fade-up">
+      <div class="stat-card glass-card" *ngFor="let stat of stats; let i = index" [attr.data-aos]="'zoom-in'"
+        [attr.data-aos-delay]="i * 150">
+        <span class="stat-icon">{{ stat.icon }}</span>
+        <span class="stat-number">{{ stat.current }}{{ stat.suffix }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- Projects Section -->
   <section class="section projects-section">
-    <div class="projects-header">
+    <div class="projects-header" data-aos="fade-up">
+      <span class="section-tag">💼 Portfolio</span>
       <h2>Featured Projects</h2>
       <p>Real builds that blend logic, design, and precision.</p>
     </div>
-    <div class="project-grid">
+    <div class="project-grid bento">
 
-      <!-- Your project cards -->
-      <div class="project-card">
-        <img src="assets/task.jpg" alt="TaskFlow Project">
+      <!-- Featured Project Card -->
+      <div class="project-card glass-card featured" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-image-wrapper">
+          <img src="assets/task.jfif" alt="TaskFlow Project">
+          <div class="card-overlay">
+            <span class="card-badge">⭐ Featured</span>
+          </div>
+        </div>
         <div class="project-info">
+          <div class="project-category">Full-Stack Application</div>
           <h3>TaskFlow - The Task Management</h3>
           <p>
             A productivity platform that turns chaos into clarity. Built with Angular & Node.js, TaskFlow manages
             projects, teams, and progress — all in one clean dashboard.
           </p>
           <div class="tech-tags">
-            <span>Angular</span><span>Node.js</span><span>SQL</span>
+            <span>Angular</span><span>Node.js</span><span>SQL</span><span>TypeScript</span>
           </div>
-          <!-- <button class="project-view-btn">View Project</button> -->
-          <button class="project-view-btn" (click)="goToProjectsPage('taskflow')">View Project</button>
+          <button class="project-view-btn" (click)="goToProjectsPage('taskflow')">
+            View Project <span class="btn-arrow">→</span>
+          </button>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="assets/ecommerce.jpg" alt="ShopNest Project">
+      <!-- EShaw Card -->
+      <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-image-wrapper">
+          <img src="assets/ecommerce.jpg" alt="EShaw Project">
+          <div class="card-overlay">
+            <span class="card-badge">🛒 E-Commerce</span>
+          </div>
+        </div>
         <div class="project-info">
-          <h3>EShaw - An Eccommerce Website</h3>
+          <div class="project-category">E-Commerce Platform</div>
+          <h3>EShaw - An Ecommerce Website</h3>
           <p>
             A full-stack eCommerce platform where scalability meets simplicity. Users can shop, pay, and manage their
-            accounts seamlessly — powered by Spring Boot & Angular.
+            accounts seamlessly.
           </p>
           <div class="tech-tags">
-            <span>PHP</span><span>Laravel</span><span>Angular</span>
+            <span>PHP</span><span>Laravel</span><span>Angular</span><span>MySQL</span>
           </div>
-          <!-- <button class="project-view-btn">View Project</button> -->
-          <button class="project-view-btn" (click)="goToProjectsPage('eshaw')">View Project</button>
+          <button class="project-view-btn" (click)="goToProjectsPage('eshaw')">
+            View Project <span class="btn-arrow">→</span>
+          </button>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="assets/food.png" alt="Food Rescue Network">
+      <!-- SavePlate Card -->
+      <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-image-wrapper">
+          <img src="assets/food.png" alt="Food Rescue Network">
+          <div class="card-overlay">
+            <span class="card-badge">🌱 Social Impact</span>
+          </div>
+        </div>
         <div class="project-info">
+          <div class="project-category">Social Impact Platform</div>
           <h3>SavePlate - Food Rescue Network</h3>
           <p>
             A platform connecting food donors with food banks and shelters to reduce food waste and provide assistance
             to those in need.
           </p>
           <div class="tech-tags">
-            <span>Angular</span><span>Node.js</span><span>Express</span><span>MySQL</span>
+            <span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span>
           </div>
-          <button class="project-view-btn" (click)="goToProjectsPage('food-rescue')">View Project</button>
+          <button class="project-view-btn" (click)="goToProjectsPage('food-rescue')">
+            View Project <span class="btn-arrow">→</span>
+          </button>
         </div>
       </div>
 
-      <!-- <div class="project-card">
-      <img src="assets/ui-snippets.jpg" alt="UI Snippets Project">
-      <div class="project-info">
-        <h3>UI Snippets</h3>
-        <p>
-          A curated library of reusable UI components for developers who love clean interfaces. Designed with TypeScript & SCSS for maximum flexibility.
-        </p>
-        <div class="tech-tags">
-          <span>TypeScript</span><span>SCSS</span><span>HTML</span>
-        </div>
-        <button class="project-view-btn">View Project</button>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="assets/insight-analytics.jpg" alt="Insight Analytics Project">
-      <div class="project-info">
-        <h3>Insight Analytics</h3>
-        <p>
-          Data visualization done right. A dashboard that transforms raw metrics into beautiful charts with live updates and API integration.
-        </p>
-        <div class="tech-tags">
-          <span>Angular</span><span>Chart.js</span><span>REST API</span>
-        </div>
-        <button class="project-view-btn">View Project</button>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="assets/devconnect.jpg" alt="DevConnect Project">
-      <div class="project-info">
-        <h3>DevConnect</h3>
-        <p>
-          A social hub for developers to collaborate, share projects, and learn together — built with Node.js, Express, and JWT authentication.
-        </p>
-        <div class="tech-tags">
-          <span>Node.js</span><span>Express</span><span>JWT</span>
-        </div>
-        <button class="project-view-btn">View Project</button>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="assets/portfolio-ai.jpg" alt="AI Portfolio Builder">
-      <div class="project-info">
-        <h3>Portfolio AI</h3>
-        <p>
-          An AI-powered tool that helps devs auto-generate their own portfolio sites with dynamic templates and smart color themes.
-        </p>
-        <div class="tech-tags">
-          <span>Angular</span><span>OpenAI API</span><span>TypeScript</span>
-        </div>
-        <button class="project-view-btn">View Project</button>
-      </div>
-    </div> -->
     </div>
   </section>
+
 
 
   <!-- Contact Section -->
   <section class="section contact-section">
-    <div class="contact-container">
-      <!-- Your contact form -->
 
-      <h2>Let’s Work Together</h2>
-      <p class="contact-intro">
-        Have an idea worth building or just want to say hello?
-        I’m open for collaborations, freelancing, or full-time roles.
-      </p>
+    <!-- Decorative background orbs -->
+    <div class="contact-orb contact-orb-1"></div>
+    <div class="contact-orb contact-orb-2"></div>
+    <div class="contact-orb contact-orb-3"></div>
 
-      <form class="contact-form" (submit)="$event.preventDefault()">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Your Email" required />
-        </div>
-        <div class="form-group">
-          <textarea rows="4" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="send-btn">Send Message</button>
-      </form>
+    <div class="contact-wrapper" data-aos="fade-up">
 
-      <!-- <div class="contact-left">
-            <h5>CONTACT</h5>
-            <h2>Let’s Build Something Amazing Together!</h2>
-            <p>
-              Have a project in mind or want to collaborate?  
-              Feel free to reach out — I’m always excited to connect and explore new opportunities.
-            </p>
+      <!-- Left: Info Side -->
+      <div class="contact-info-side">
+        <span class="section-tag">✉️ Contact</span>
+        <h2>Let's Work<br>Together</h2>
+        <p class="contact-intro">
+          Have an idea worth building or just want to say hello?
+          I'm open for collaborations, freelancing, or full-time roles.
+        </p>
 
-            <div class="contact-info">
-              <p><strong>Email:</strong> ghaffarhussaing7@gmail.com</p>
-              <p><strong>Phone:</strong> +92 3360-8895-08</p>
-              <p><strong>Address:</strong> Quetta Town 18/A, Scheme 33, Near M9 Motorway, House No B/175</p>
-              <a 
-                href="https://maps.google.com?q=Quetta+Town+18/A,+Scheme+33,+Near+M9+Motorway,+House+No+B/175"
-                target="_blank" 
-                class="map-link"
-              >
-                Open Map →
-              </a>
+        <div class="contact-details">
+          <div class="contact-detail-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="detail-icon">📧</div>
+            <div>
+              <span class="detail-label">Email</span>
+              <a href="mailto:ah303130@gmail.com" class="detail-value">ah303130&#64;gmail.com</a>
             </div>
           </div>
+          <div class="contact-detail-item" data-aos="fade-right" data-aos-delay="200">
+            <div class="detail-icon">📍</div>
+            <div>
+              <span class="detail-label">Location</span>
+              <span class="detail-value">India</span>
+            </div>
+          </div>
+          <div class="contact-detail-item" data-aos="fade-right" data-aos-delay="300">
+            <div class="detail-icon">💼</div>
+            <div>
+              <span class="detail-label">Availability</span>
+              <span class="detail-value status-available">Open to Work</span>
+            </div>
+          </div>
+        </div>
 
-          <div class="contact-right">
-            <form class="contact-form" (submit)="$event.preventDefault()">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <input type="text" placeholder="Subject" required />
-              <textarea rows="4" placeholder="Your Message" required></textarea>
-              <button type="submit" class="send-btn">Send Message</button>
-            </form>
-          </div> -->
-
-      <div class="contact-socials">
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/abdulhameed06" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="http://mailto:ah303130@gmail.com">Email</a>
+        <div class="contact-socials">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+            title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/abdulhameed06" target="_blank" rel="noopener noreferrer"
+            class="social-icon-btn" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="mailto:ah303130@gmail.com" class="social-icon-btn" title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+            </svg>
+          </a>
+        </div>
       </div>
+
+      <!-- Right: Form Side -->
+      <div class="contact-form-side glass-card">
+        <h3>Send a Message</h3>
+        <form class="contact-form" (submit)="sendEmail($event)">
+          <div class="form-group">
+            <input type="text" id="contact-name" placeholder=" " [(ngModel)]="contactForm.name" name="name" required />
+            <label for="contact-name">Your Name</label>
+            <div class="input-highlight"></div>
+          </div>
+          <div class="form-group">
+            <input type="email" id="contact-email" placeholder=" " [(ngModel)]="contactForm.email" name="email"
+              required />
+            <label for="contact-email">Your Email</label>
+            <div class="input-highlight"></div>
+          </div>
+          <div class="form-group">
+            <textarea rows="4" id="contact-message" placeholder=" " [(ngModel)]="contactForm.message" name="message"
+              required></textarea>
+            <label for="contact-message">Your Message</label>
+            <div class="input-highlight"></div>
+          </div>
+          <button type="submit" class="send-btn" [disabled]="isSubmitting">
+            <span class="btn-text">{{ isSubmitting ? 'Sending...' : 'Send Message' }}</span>
+            <span class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </span>
+          </button>
+          <p class="submit-message" *ngIf="submitMessage">{{ submitMessage }}</p>
+        </form>
+      </div>
+
     </div>
   </section>
 </div>
+
 
 <!-- STATIC FOOTER (always visible at bottom) -->
 <footer class="static-footer visible">

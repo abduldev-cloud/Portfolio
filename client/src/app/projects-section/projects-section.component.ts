@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ViewportScroller } from '@angular/common';
+import * as AOS from 'aos';
+
 @Component({
   selector: 'app-projects-section',
   templateUrl: './projects-section.component.html',
@@ -17,9 +19,16 @@ export class ProjectsSectionComponent implements OnInit {
     private router: Router,
     private location: Location,
     private scroller: ViewportScroller
-  ) {}
+  ) { }
 
   ngOnInit(): void {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-cubic',
+      offset: 80,
+    });
+
     // Check if a specific project was requested via URL
     this.route.queryParams.subscribe(params => {
       if (params['project']) {
@@ -32,14 +41,14 @@ export class ProjectsSectionComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-  this.route.fragment.subscribe(fragment => {
-    if (fragment) {
-      setTimeout(() => {
-        this.scroller.scrollToAnchor(fragment);
-      }, 100); // delay ensures DOM is ready
-    }
-  });
-}
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => {
+          this.scroller.scrollToAnchor(fragment);
+        }, 100); // delay ensures DOM is ready
+      }
+    });
+  }
 
   // Show specific project detail view
   showProjectDetail(projectId: string): void {
@@ -48,29 +57,29 @@ export class ProjectsSectionComponent implements OnInit {
   }
 
   // Go back to all projects view
-showAllProjectsView(): void {
-  // this.showAllProjects = true;
-  // this.selectedProject = '';
+  showAllProjectsView(): void {
+    // this.showAllProjects = true;
+    // this.selectedProject = '';
 
-  // Navigate back to home with projects fragment
-  this.router.navigate(['/'], {
-    fragment: 'projects',
-    state: { fromNavigation: true } 
-  });
+    // Navigate back to home with projects fragment
+    this.router.navigate(['/'], {
+      fragment: 'projects',
+      state: { fromNavigation: true }
+    });
 
-  // this.location.back();
+    // this.location.back();
 
-//   this.router.navigate(['/home'], {
-//   state: { fromProjects: true }
-// });
-}
+    //   this.router.navigate(['/home'], {
+    //   state: { fromProjects: true }
+    // });
+  }
 
 
   // Navigate to specific project from within projects page
   viewProject(projectId: string, event: Event): void {
     event.preventDefault();
     this.showProjectDetail(projectId);
-    
+
     // Update URL without navigation
     this.router.navigate([], {
       queryParams: { project: projectId },

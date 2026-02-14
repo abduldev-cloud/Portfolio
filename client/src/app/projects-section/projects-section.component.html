@@ -1,11 +1,22 @@
 <section class="section projects-section">
 
+  <!-- Floating Particles -->
+  <div class="particles global-particles">
+    <span class="particle" style="--size: 70px; --x: 8%; --y: 15%; --duration: 18s; --delay: 0s;"></span>
+    <span class="particle" style="--size: 35px; --x: 80%; --y: 10%; --duration: 22s; --delay: 2s;"></span>
+    <span class="particle" style="--size: 55px; --x: 65%; --y: 65%; --duration: 20s; --delay: 4s;"></span>
+    <span class="particle" style="--size: 25px; --x: 15%; --y: 70%; --duration: 16s; --delay: 1s;"></span>
+    <span class="particle" style="--size: 45px; --x: 45%; --y: 35%; --duration: 24s; --delay: 3s;"></span>
+    <span class="particle square" style="--size: 30px; --x: 25%; --y: 50%; --duration: 19s; --delay: 5s;"></span>
+    <span class="particle square" style="--size: 20px; --x: 70%; --y: 30%; --duration: 21s; --delay: 7s;"></span>
+    <span class="particle triangle" style="--size: 40px; --x: 55%; --y: 80%; --duration: 17s; --delay: 2s;"></span>
+  </div>
 
   <!-- Specific Project Detail View -->
   <div *ngIf="!showAllProjects && selectedProject" class="project-detail-view">
 
     <!-- Back Button -->
-    <div class="back-nav">
+    <div class="back-nav" data-aos="fade-right" data-aos-duration="500">
       <button class="back-btn" (click)="showAllProjectsView()">
         ← Back to All Projects
       </button>
@@ -13,7 +24,7 @@
 
     <!-- TaskFlow Project Detail -->
     <div *ngIf="selectedProject === 'taskflow'" class="project-detail-container">
-      <div class="project-hero">
+      <div class="project-hero" data-aos="fade-up">
         <div class="hero-content">
           <h1>TaskFlow - Task Management</h1>
           <p class="hero-subtitle">A productivity platform that turns chaos into clarity</p>
@@ -23,13 +34,13 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="assets/task.jpg" alt="TaskFlow Project">
+          <img src="assets/task.jfif" alt="TaskFlow Project">
         </div>
       </div>
 
       <div class="project-content">
         <!-- Project Overview Stats -->
-        <div class="project-stats">
+        <div class="project-stats" data-aos="fade-up" data-aos-delay="100">
           <div class="stat-item">
             <span class="stat-number">1.5 months</span>
             <span class="stat-label">Development Time</span>
@@ -48,7 +59,7 @@
           </div>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>About This Project</h2>
           <p>TaskFlow is a comprehensive task management platform I developed to help teams organize, track, and
             complete their work efficiently. Built with Angular and Node.js, it provides a modern, intuitive interface
@@ -60,7 +71,7 @@
             and automated notifications to keep everyone aligned and productive.</p>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Technologies Used</h2>
           <div class="tech-tags large">
             <span><img src="assets/angular.png" alt="Angular"></span>
@@ -74,7 +85,7 @@
         </div>
 
         <!-- Detailed Features -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Key Features</h2>
           <div class="features-grid">
             <div class="feature-item">
@@ -131,7 +142,7 @@
         </div>
 
         <!-- Technical Architecture -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Technical Architecture</h2>
           <div class="architecture-description">
             <h4>Frontend Architecture</h4>
@@ -168,32 +179,32 @@
         </div>
 
         <!-- Screenshots Section -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Project Screenshots</h2>
           <p class="screenshot-note">📸 Screenshots showcase the Kanban board, task details, analytics dashboard, and
             team collaboration features</p>
           <div class="screenshots-grid">
             <div class="screenshot-item">
-              <img src="assets/task-dashboard.jpg" alt="Kanban Board">
+              <img src="assets/admin-task-dashboard.png" alt="Kanban Board">
               <p>Dashboard View</p>
             </div>
             <div class="screenshot-item">
-              <img src="assets/task-create.jpg" alt="Task Detail">
+              <img src="assets/task-create.png" alt="Task Detail">
               <p>Task Creation Page</p>
             </div>
             <div class="screenshot-item">
-              <img src="assets/task-user.jpg" alt="Dashboard">
+              <img src="assets/usertask.png" alt="Dashboard">
               <p>Dashboard Page</p>
             </div>
             <div class="screenshot-item">
-              <img src="assets/task-list.jpg" alt="Task List">
+              <img src="assets/alltask.png" alt="Task List">
               <p>Task List Page</p>
             </div>
           </div>
         </div>
 
         <!-- Learning Outcomes -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>What I Learned</h2>
           <ul class="learning-list">
             <li><strong>Full-Stack Development:</strong> Gained experience building complete task management solution
@@ -214,7 +225,7 @@
           </ul>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Project Challenges & Solutions</h2>
           <div class="challenge-solution">
             <div class="challenge">
@@ -232,7 +243,7 @@
         </div>
 
         <!-- Future Enhancements -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Future Enhancements</h2>
           <div class="future-features">
             <div class="future-item">
@@ -273,7 +284,7 @@
 
     <!-- EShaw Project Detail -->
     <div *ngIf="selectedProject === 'eshaw'" class="project-detail-container">
-      <div class="project-hero">
+      <div class="project-hero" data-aos="fade-up">
         <div class="hero-content">
           <h1>EShaw - Ecommerce Website</h1>
           <p class="hero-subtitle">A full-stack eCommerce platform where scalability meets simplicity</p>
@@ -309,7 +320,7 @@
           </div>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>About This Project</h2>
           <p>EShaw is a full-featured e-commerce platform I developed to provide a seamless online shopping experience.
             Built with PHP Laravel backend and Angular frontend, it offers a complete solution for managing products,
@@ -321,7 +332,7 @@
             automated email notifications for order updates and promotions.</p>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Technologies Used</h2>
           <div class="tech-tags large">
             <span><img src="assets/html.png" alt="HTML"></span>
@@ -336,7 +347,7 @@
         </div>
 
         <!-- Detailed Features -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Key Features</h2>
           <div class="features-grid">
             <div class="feature-item">
@@ -394,7 +405,7 @@
         </div>
 
         <!-- Technical Architecture -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Technical Architecture</h2>
           <div class="architecture-description">
             <h4>Frontend Architecture</h4>
@@ -431,7 +442,7 @@
         </div>
 
         <!-- Screenshots Section -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Project Screenshots</h2>
           <p class="screenshot-note">📸 Screenshots showcase the product catalog, shopping cart, checkout process, and
             admin dashboard</p>
@@ -460,7 +471,7 @@
         </div>
 
         <!-- Learning Outcomes -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>What I Learned</h2>
           <ul class="learning-list">
             <li><strong>Full-Stack E-commerce:</strong> Gained comprehensive experience in building complete e-commerce
@@ -485,7 +496,7 @@
           </ul>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Project Challenges & Solutions</h2>
           <div class="challenge-solution">
             <div class="challenge">
@@ -503,7 +514,7 @@
         </div>
 
         <!-- Future Enhancements -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Future Enhancements</h2>
           <div class="future-features">
             <div class="future-item">
@@ -545,7 +556,7 @@
 
     <!-- Food Rescue Network Project Detail -->
     <div *ngIf="selectedProject === 'food-rescue'" class="project-detail-container">
-      <div class="project-hero">
+      <div class="project-hero" data-aos="fade-up">
         <div class="hero-content">
           <h1>SavePlate - Food Rescue Network Management</h1>
           <p class="hero-subtitle">A Platform for Food Rescue Network</p>
@@ -581,7 +592,7 @@
           </div>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>About This Project</h2>
           <p>SavePlate is a social impact platform I developed to tackle food waste and hunger simultaneously. The
             platform connects restaurants, grocery stores, and individual donors with local food banks and shelters in
@@ -594,7 +605,7 @@
           </p>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Technologies Used</h2>
           <div class="tech-tags large">
             <span><img src="assets/react.png" alt="React"></span>
@@ -606,7 +617,7 @@
         </div>
 
         <!-- Detailed Features -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Key Features</h2>
           <div class="features-grid">
             <div class="feature-item">
@@ -665,7 +676,7 @@
         </div>
 
         <!-- Technical Architecture -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Technical Architecture</h2>
           <div class="architecture-description">
             <h4>Frontend Architecture</h4>
@@ -699,7 +710,7 @@
         </div>
 
         <!-- Screenshots Section -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Project Screenshots</h2>
           <p class="screenshot-note">📸 Screenshots showcase the donor dashboard, NGO portal, donation tracking, and
             impact analytics</p>
@@ -724,7 +735,7 @@
         </div>
 
         <!-- Learning Outcomes -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>What I Learned</h2>
           <ul class="learning-list">
             <li><strong>Full-Stack Development:</strong> Gained hands-on experience in connecting React frontend with
@@ -747,7 +758,7 @@
           </ul>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Project Challenges & Solutions</h2>
           <div class="challenge-solution">
             <div class="challenge">
@@ -765,7 +776,7 @@
         </div>
 
         <!-- Future Enhancements -->
-        <div class="content-section">
+        <div class="content-section" data-aos="fade-up">
           <h2>Future Enhancements</h2>
           <div class="future-features">
             <div class="future-item">

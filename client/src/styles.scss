@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -20,13 +19,10 @@ $client-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$client-theme: mat-light-theme((
-  color: (
-    primary: $client-primary,
-    accent: $client-accent,
-    warn: $client-warn,
-  )
-));
+$client-theme: mat-light-theme((color: (primary: $client-primary,
+        accent: $client-accent,
+        warn: $client-warn,
+      )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -36,20 +32,175 @@ $client-theme: mat-light-theme((
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
 
-*{
+// ===== CSS VARIABLES FOR THEMING =====
+:root {
+  --bg-primary: #f5e6d3;
+  --bg-secondary: #fdf6ee;
+  --text-primary: #222;
+  --text-secondary: #555;
+  --accent-primary: #a35d2e;
+  --accent-hover: #8c4e26;
+  --border-color: #d4c4b0;
+  --input-bg: #fdf6ee;
+  --tag-bg: #efe0cf;
+  --gradient-mid1: #f5e6d3;
+  --gradient-mid2: #f5e6d3;
+  --keyword-color: #0078d7;
+  --footer-bg-gradient: linear-gradient(135deg, #2c2218 0%, #1a140e 100%);
+  --footer-text-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a140e;
+  --bg-secondary: #241c14;
+  --text-primary: #e0d5ca;
+  --text-secondary: #b0a090;
+  --accent-primary: #d4845f;
+  --accent-hover: #e09570;
+  --border-color: #3d3028;
+  --input-bg: #2a2118;
+  --tag-bg: #2a2118;
+  --gradient-mid1: #1a140e;
+  --gradient-mid2: #1a140e;
+  --keyword-color: #569cd6;
+  --footer-bg-gradient: linear-gradient(135deg, #1a140e 0%, #0f0b07 100%);
+  --footer-text-color: #e0d5ca;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  background-color: #edede7;
-  color: #fff;
+html,
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-footer, section, header {
+// Global glass-card dark mode (must be in global styles for data-theme to work)
+[data-theme="dark"] .glass-card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+footer,
+section,
+header {
   border: none !important;
   outline: none !important;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// ===== GLOBAL FLOATING PARTICLES =====
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particles.global-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  left: var(--x);
+  top: var(--y);
+  background: var(--accent-primary);
+  border-radius: 50%;
+  opacity: 0.08;
+  animation: particleFloat var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+
+  &.square {
+    border-radius: 4px;
+    transform: rotate(45deg);
+  }
+
+  &.triangle {
+    background: transparent;
+    width: 0;
+    height: 0;
+    border-left: calc(var(--size) / 2) solid transparent;
+    border-right: calc(var(--size) / 2) solid transparent;
+    border-bottom: var(--size) solid var(--accent-primary);
+    opacity: 0.06;
+  }
+}
+
+@keyframes particleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-30px) translateX(20px) rotate(90deg);
+  }
+
+  50% {
+    transform: translateY(-15px) translateX(-15px) rotate(180deg);
+  }
+
+  75% {
+    transform: translateY(-40px) translateX(10px) rotate(270deg);
+  }
+}
+
+// ===== GLOBAL WAVE SECTION DIVIDERS =====
+.wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  z-index: 5;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+  }
+
+  &.wave-flip {
+    transform: scaleX(-1);
+  }
+}
+
+// ===== GLOBAL GLASS-CARD =====
+.glass-card {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
