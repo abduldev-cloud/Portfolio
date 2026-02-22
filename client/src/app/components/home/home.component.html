@@ -334,70 +334,76 @@
 
 
 <!-- STATIC FOOTER (always visible at bottom) -->
-<footer class="static-footer visible">
+<footer class="static-footer">
   <div class="footer-container">
-    <!-- Main Footer Content -->
     <div class="footer-content">
-      <!-- Brand Column -->
+      <!-- Brand & Bio -->
       <div class="footer-brand">
-        <h3>Portfolio</h3>
+        <h3>Abdul Hameed</h3>
         <p>
-          Building digital experiences that blend creativity with functionality.
-          Let's create something amazing together.
+          Crafting high-end digital experiences with modern web technologies.
+          Focused on performance, aesthetics, and user-centric design.
         </p>
         <div class="social-links">
-          <a href="https://github.com/" target="_blank" title="GitHub">📂</a>
-          <a href="https://linkedin.com/in/abdulhameed06" target="_blank" title="LinkedIn">💼</a>
-          <a href="https://twitter.com/" target="_blank" title="Twitter">🐦</a>
-          <a href="http://mailto:ah303130@gmail.com" title="Email">✉️</a>
+          <a href="https://github.com/abdulhameed06" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/abdulhameed06" target="_blank" title="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:ah303130@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
 
       <!-- Quick Links -->
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4>Navigation</h4>
         <ul>
           <li><a (click)="scrollToSection('intro')">Home</a></li>
           <li><a (click)="scrollToSection('about')">About</a></li>
-          <li><a (click)="scrollToSection('projects')">Projects</a></li>
-          <li><a (click)="scrollToSection('contact')">Contact</a></li>
+          <li><a (click)="scrollToSection('projects')">Portfolio</a></li>
+          <li><a (click)="scrollToSection('contact')">Get in Touch</a></li>
         </ul>
       </div>
 
       <!-- Services -->
       <div class="footer-services">
-        <h4>Services</h4>
+        <h4>Specialties</h4>
         <ul>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Software Development</a></li>
-          <li><a href="#">Frontend Solutions</a></li>
-          <li><a href="#">Mobile Application Development</a></li>
+          <li><a href="javascript:void(0)">Full-Stack Development</a></li>
+          <li><a href="javascript:void(0)">UX/UI Design</a></li>
+          <li><a href="javascript:void(0)">Cloud Solutions</a></li>
+          <li><a href="javascript:void(0)">Consulting</a></li>
         </ul>
       </div>
 
       <!-- Newsletter -->
       <div class="footer-newsletter">
-        <h4>Stay Updated</h4>
-        <p style="color: #ccc; margin-bottom: 1rem;">Get the latest updates on my work and projects.</p>
+        <h4>Weekly Insights</h4>
+        <p>Subscribe to get my latest project case studies and dev tips.</p>
         <form class="newsletter-form" (submit)="$event.preventDefault()">
-          <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-          <button type="submit" class="subscribe-btn">Subscribe</button>
+          <div class="newsletter-group">
+            <input type="email" class="newsletter-input" placeholder="Your best email..." required>
+            <button type="submit" class="subscribe-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
         </form>
       </div>
     </div>
 
     <!-- Footer Bottom -->
     <div class="footer-bottom">
-      <div class="copyright">
-        © 2024 Abdul Hameed. All rights reserved.
+      <div class="footer-legal">
+        <p class="copyright">© 2024 Abdul Hameed. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="javascript:void(0)">Privacy</a>
+          <a href="javascript:void(0)">Terms</a>
+          <a href="javascript:void(0)">Security</a>
+        </div>
       </div>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookies</a>
-      </div>
-      <button class="back-to-top" (click)="scrollToTop()">
-        ↑ Back to Top
+
+      <button class="back-to-top" (click)="scrollToTop()" aria-label="Scroll to Top">
+        <span class="btn-text">Top</span>
+        <i class="fas fa-chevron-up"></i>
       </button>
     </div>
   </div>
