@@ -221,7 +221,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
     { name: 'Responsive Architecture', level: 88 }
   ];
 
-  // Send Email via server Nodemailer endpoint
+  // Send Email via EmailJS (Frontend Only)
   async sendEmail(event: Event): Promise<void> {
     event.preventDefault();
 
@@ -237,28 +237,39 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
     this.isSubmitting = true;
     this.submitMessage = '📤 Sending...';
 
+    const templateParams = {
+      from_name: this.contactForm.name,
+      from_email: this.contactForm.email,
+      message: this.contactForm.message,
+      to_name: 'Abdul Hameed', // Change to your name
+    };
+
     try {
-      const response = await fetch('http://localhost:4000/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: this.contactForm.name,
-          email: this.contactForm.email,
-          message: this.contactForm.message
-        })
-      });
+      // Replace these with your actual IDs from EmailJS dashboard
+      const serviceID = 'service_4yvxalj';
+      const templateID = 'template_ay2ychg';
+      const publicKey = 'zQ2hBADbqRst5wn6T';
 
-      const data = await response.json();
+      // Initialize with public key for this request 
+      // (or do it in ngOnInit if preferred, but here is fine for simplicity)
+      // We use 'any' cast to avoid TypeScript errors if types aren't perfect
+      const emailjs = (window as any).emailjs;
 
-      if (response.ok) {
+      if (!emailjs) {
+        throw new Error('EmailJS SDK not loaded. Please ensure internet connection.');
+      }
 
+      await emailjs.init(publicKey);
+
+      const response = await emailjs.send(serviceID, templateID, templateParams);
+
+      if (response.status === 200) {
+        console.log('Email sent successfully', response);
         this.submitMessage = '✅ Message sent successfully!';
         this.contactForm = { name: '', email: '', message: '' };
         setTimeout(() => this.submitMessage = '', 5000);
       } else {
-        throw new Error(data.error || 'Failed to send');
+        throw new Error('Failed to send');
       }
     } catch (error) {
       console.error('Email send failed:', error);
