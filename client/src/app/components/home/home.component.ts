@@ -212,10 +212,10 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
   skills = [
     { name: 'Angular / TypeScript', level: 90 },
     { name: 'React', level: 80 },
-    { name: 'Java', level: 85 },
-    { name: 'Python', level: 75 },
-    { name: 'C', level: 70 },
     { name: 'Node.js / Express', level: 80 },
+    { name: 'C', level: 80 },
+    { name: 'Python', level: 75 },
+    { name: 'Java', level: 70 },
     { name: 'MySQL / REST APIs', level: 85 },
     { name: 'Git', level: 85 },
     { name: 'Responsive Architecture', level: 88 }
