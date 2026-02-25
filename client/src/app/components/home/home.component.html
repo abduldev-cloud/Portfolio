@@ -15,6 +15,9 @@
       <a (click)="scrollToSection('about')" [class.active]="isActiveSection('about')">About</a>
     </li>
     <li>
+      <a (click)="scrollToSection('experience')" [class.active]="isActiveSection('experience')">Experience</a>
+    </li>
+    <li>
       <a (click)="scrollToSection('projects')" [class.active]="isActiveSection('projects')">Projects</a>
     </li>
     <li>
@@ -134,6 +137,44 @@
         <span class="stat-icon">{{ stat.icon }}</span>
         <span class="stat-number">{{ stat.current }}{{ stat.suffix }}</span>
         <span class="stat-label">{{ stat.label }}</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Experience Section -->
+  <section class="section experience-section">
+    <div class="experience-header" data-aos="fade-up">
+      <span class="section-tag">💼 Experience</span>
+      <h2>My Journey</h2>
+      <p>A timeline of roles, projects, and growth that shaped my career.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item" *ngFor="let exp of experiences; let i = index"
+        [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'" [attr.data-aos-delay]="i * 150">
+
+        <div class="timeline-dot">
+          <span>{{ exp.icon }}</span>
+        </div>
+
+        <div class="timeline-card glass-card">
+          <div class="card-header">
+            <div class="card-title">
+              <h3>{{ exp.role }}</h3>
+              <span class="company">{{ exp.company }}</span>
+            </div>
+            <span class="period-badge">{{ exp.period }}</span>
+          </div>
+          <span class="type-badge" [ngClass]="exp.type.toLowerCase()">{{ exp.type }}</span>
+          <p class="card-description">{{ exp.description }}</p>
+          <div class="card-tags">
+            <span class="tag" *ngFor="let tag of exp.tags">{{ tag }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -13,7 +13,7 @@ import * as AOS from 'aos';
 export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
   @ViewChild('statsSection') statsSection!: ElementRef;
 
-  private sectionNames = ['intro', 'about', 'projects', 'contact'];
+  private sectionNames = ['intro', 'about', 'experience', 'projects', 'contact'];
   currentSectionIndex = 0;
   isDownloading = false;
   isFooterVisible = true;
@@ -43,6 +43,46 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
     { icon: '☕', label: 'Cups of Coffee', target: 500, current: 0, suffix: '+' }
   ];
   private statsAnimated = false;
+
+  // Experience data
+  experiences = [
+    {
+      role: 'Web Developer Intern',
+      company: 'DSRT',
+      type: 'Full-time',
+      period: 'March 2025 – December 2025',
+      description: 'Building scalable web applications with Angular and Node.js. Leading frontend architecture decisions and implementing responsive design systems.',
+      tags: ['Angular', 'Node.js', 'React', 'TypeScript', 'REST APIs'],
+      icon: '💼'
+    },
+    {
+      role: 'Java Developer Intern',
+      company: 'Iconic Software Solution',
+      type: 'Internship',
+      period: 'Jun 2023 – Dec 2023',
+      description: 'Developed interactive UI components and integrated third-party APIs. Improved page load performance by 40% through code splitting and lazy loading.',
+      tags: ['Java', 'Applets', 'Git'],
+      icon: '🚀'
+    },
+    {
+      role: 'Master of Computer Applications',
+      company: 'Francis Xavier Engineering College',
+      type: 'Education',
+      period: '2024 – 2026',
+      description: 'Currently pursuing Master of Computer Applications with a strong foundation in software engineering, data structures, and full-stack web development.',
+      tags: ['Java', 'Python', 'Data Structures', 'DBMS'],
+      icon: '🎯'
+    },
+    {
+      role: 'Bachelor of Computer Science',
+      company: 'Sadakathullah Appa College',
+      type: 'Education',
+      period: '2021 – 2024',
+      description: 'Graduated with distinction. Focused on software engineering, data structures, and full-stack web development. Active member of the coding club.',
+      tags: ['Java', 'Python', 'Data Structures', 'DBMS'],
+      icon: '🎓'
+    }
+  ];
 
 
   constructor(
