@@ -816,6 +816,300 @@
     </div>
 
 
+    <!-- VantanceCA Project Detail -->
+    <div *ngIf="selectedProject === 'ca-exam'" class="project-detail-container">
+      <div class="project-hero" data-aos="fade-up">
+        <div class="hero-content">
+          <h1>VantanceCA - CA Exam Preparation System</h1>
+          <p class="hero-subtitle">An advanced educational platform bridging schools, teachers, and learners</p>
+          <div class="project-links">
+            <a href="https://vantance-ca.vercel.app/" target="_blank" class="btn primary">Live Demo</a>
+            <a href="https://github.com/abduldev-cloud/VantanceCA" target="_blank" class="btn outline">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/ca_exam.png" alt="VantanceCA Project">
+        </div>
+      </div>
+
+      <div class="project-content">
+        <!-- Project Overview Stats -->
+        <div class="project-stats" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-item">
+            <span class="stat-number">2 months</span>
+            <span class="stat-label">Development Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">User Roles</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">AI</span>
+            <span class="stat-label">Grading Engine</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Mock Questions</span>
+          </div>
+        </div>
+
+        <div class="content-section" data-aos="fade-up">
+          <h2>About This Project</h2>
+          <p>VantanceCA is a comprehensive CA exam preparation platform I developed to streamline the interaction
+            between educational institutions, teachers, and students. Built with React and FastAPI, it provides a
+            structured, intelligent interface for managing study materials, assignments, and mock examinations.</p>
+          <p>The platform features an AI-powered grading engine powered by OpenRouter, multi-role access for admins,
+            teachers, and learners, PDF-based study material processing, and a full mock examination workflow with
+            automated results and analytics.</p>
+          <p>Key innovations include AI-assisted answer evaluation against study materials, Keycloak-backed
+            authentication with a local mock auth fallback for development, and a clean, modular FastAPI backend
+            organized around domain-driven modules.</p>
+        </div>
+
+        <div class="content-section" data-aos="fade-up">
+          <h2>Technologies Used</h2>
+          <div class="tech-tags large">
+            <span><img src="assets/react.png" alt="React"></span>
+            <span><img src="assets/python.png" alt="Python"></span>
+            <span><img src="assets/sql.png" alt="MySQL"></span>
+            <span><img src="assets/rest_api.png" alt="REST API"></span>
+          </div>
+        </div>
+
+        <!-- Detailed Features -->
+        <div class="content-section" data-aos="fade-up">
+          <h2>Key Features</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🤖</div>
+              <h3>AI-Powered Grading</h3>
+              <p>OpenRouter-integrated AI evaluates student submissions against assignment context and study materials
+                for intelligent, context-aware grading</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📚</div>
+              <h3>Study Material Management</h3>
+              <p>Teachers can upload PDFs and documents; the AI extracts and indexes content for use in grading and
+                Q&A workflows</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📝</div>
+              <h3>Mock Examination Engine</h3>
+              <p>Full exam lifecycle management from question creation to timed attempts, auto-grading, and detailed
+                result reports</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👥</div>
+              <h3>Multi-Role Access</h3>
+              <p>Distinct dashboards and permissions for Admins, Teachers, and Learners with role-based route
+                protection</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏫</div>
+              <h3>School & Batch Management</h3>
+              <p>Admins can create schools, manage teacher and learner enrollments, and organize batches for structured
+                learning</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📋</div>
+              <h3>Assignment Workflow</h3>
+              <p>Teachers assign tasks to learners with deadlines; learners submit answers that are then AI-evaluated
+                and reviewed</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔐</div>
+              <h3>Keycloak Authentication</h3>
+              <p>Enterprise-grade auth via Keycloak with a local mock auth fallback for isolated development
+                environments</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <h3>Performance Analytics</h3>
+              <p>Track learner progress, assignment scores, and exam results with detailed analytics dashboards for
+                teachers and admins</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📄</div>
+              <h3>PDF Text Extraction</h3>
+              <p>Automated extraction of text from uploaded study materials to power the AI grading and reference
+                system</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📱</div>
+              <h3>Responsive Design</h3>
+              <p>Fully responsive React interface optimized for desktop and tablet use, ensuring accessibility across
+                devices</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Architecture -->
+        <div class="content-section" data-aos="fade-up">
+          <h2>Technical Architecture</h2>
+          <div class="architecture-description">
+            <h4>Frontend Architecture</h4>
+            <ul>
+              <li><strong>Component-based Design:</strong> Modular React components for pages (auth, student, teacher)
+                and reusable UI components</li>
+              <li><strong>Routing:</strong> React Router with role-protected routes for seamless, secure navigation</li>
+              <li><strong>State Management:</strong> React Context API for managing authenticated user sessions and
+                global state</li>
+              <li><strong>API Integration:</strong> Axios for consuming FastAPI RESTful endpoints with proper error
+                handling</li>
+              <li><strong>Build Tool:</strong> Vite for fast development server and optimized production builds</li>
+            </ul>
+
+            <h4>Backend Architecture</h4>
+            <ul>
+              <li><strong>FastAPI Framework:</strong> High-performance Python web framework with automatic API
+                documentation (Swagger/OpenAPI)</li>
+              <li><strong>Domain-driven Modules:</strong> Separate modules for users, teachers, learners, and AI
+                within a structured app layout</li>
+              <li><strong>AI Integration:</strong> OpenRouter API for LLM-powered grading with injected study material
+                context</li>
+              <li><strong>Authentication:</strong> Keycloak integration with a mock auth fallback for local development
+                using JWT</li>
+              <li><strong>PDF Processing:</strong> Server-side PDF text extraction to feed study content into the AI
+                grading pipeline</li>
+              <li><strong>Database ORM:</strong> SQLAlchemy for MySQL/Oracle database interactions with clean schema
+                management</li>
+            </ul>
+
+            <h4>Database Design</h4>
+            <ul>
+              <li><strong>Users Table:</strong> Multi-role user records (admin, teacher, learner) with authentication
+                data</li>
+              <li><strong>Schools & Batches:</strong> Institution and batch grouping tables for organized learner
+                management</li>
+              <li><strong>Assignments Table:</strong> Assignment definitions with deadlines, topics, and teacher
+                associations</li>
+              <li><strong>Submissions Table:</strong> Learner answers with AI evaluation results and teacher feedback
+              </li>
+              <li><strong>Exams & Questions:</strong> Mock exam definitions with question banks and timing
+                configuration</li>
+              <li><strong>Study Materials:</strong> Uploaded document records with extracted text for AI reference</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Screenshots Section -->
+        <div class="content-section" data-aos="fade-up">
+          <h2>Project Screenshots</h2>
+          <p class="screenshot-note">📸 Screenshots showcase the teacher dashboard, learner portal, assignment
+            grading, and mock exam workflows</p>
+          <div class="screenshots-grid">
+            <div class="screenshot-item">
+              <img src="assets/ca_admin-dash.png" alt="Dashboard">
+              <p>Admin Dashboard</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/ca_teacher_dash.png" alt="Teacher Portal">
+              <p>Teacher Portal</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/ca_student_dash.png" alt="Learner Portal">
+              <p>Learner Portal</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/ca_aigrade.png" alt="Mock Exam">
+              <p>AI Grading</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="assets/ca_writingpad.png" alt="Mock Exam">
+              <p>Mock Exam View</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Outcomes -->
+        <div class="content-section" data-aos="fade-up">
+          <h2>What I Learned</h2>
+          <ul class="learning-list">
+            <li><strong>AI Integration:</strong> Learned to integrate OpenRouter LLM APIs for intelligent, context-aware
+              automated grading</li>
+            <li><strong>FastAPI Development:</strong> Built high-performance RESTful APIs with Python using FastAPI's
+              async capabilities</li>
+            <li><strong>PDF Processing:</strong> Implemented server-side PDF text extraction to power AI reference
+              pipelines</li>
+            <li><strong>Keycloak Authentication:</strong> Integrated enterprise-grade identity management and built a
+              mock auth fallback for development</li>
+            <li><strong>Multi-role Systems:</strong> Designed role-based access control across admin, teacher, and
+              learner dimensions</li>
+            <li><strong>Domain-driven Design:</strong> Structured a FastAPI backend around domain modules for clean
+              separation of concerns</li>
+            <li><strong>Database Management:</strong> Worked with both MySQL and Oracle databases using SQLAlchemy ORM
+            </li>
+            <li><strong>React Frontend:</strong> Built a responsive multi-page React application with protected routing
+              and context-based state</li>
+            <li><strong>Cloud Deployment:</strong> Deployed the FastAPI backend to cloud with proper dependency
+              management and environment configuration</li>
+            <li><strong>System Design:</strong> Learned to architect a multi-tenant educational platform with complex
+              workflows</li>
+          </ul>
+        </div>
+
+        <div class="content-section" data-aos="fade-up">
+          <h2>Project Challenges & Solutions</h2>
+          <div class="challenge-solution">
+            <div class="challenge">
+              <h4>🚧 Challenge</h4>
+              <p>Integrating AI grading that accurately evaluates answers against relevant study materials, while
+                managing the Keycloak dependency in local development and handling diverse database backends (MySQL and
+                Oracle).</p>
+            </div>
+            <div class="solution">
+              <h4>💡 Solution</h4>
+              <p>Built an OpenRouter-based grading pipeline that fetches and injects relevant study material text into
+                the AI prompt. Created a local mock auth service that bypasses Keycloak for development. Used
+                SQLAlchemy's abstraction layer to support both MySQL and Oracle seamlessly through configuration.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Enhancements -->
+        <div class="content-section" data-aos="fade-up">
+          <h2>Future Enhancements</h2>
+          <div class="future-features">
+            <div class="future-item">
+              <span class="future-icon">🤖</span>
+              <h4>AI Study Assistant</h4>
+              <p>A conversational AI chatbot for learners to ask questions about study materials and get instant
+                explanations</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📱</span>
+              <h4>Mobile Application</h4>
+              <p>Develop native iOS and Android apps for on-the-go exam preparation and push notification reminders</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">📊</span>
+              <h4>Advanced Analytics</h4>
+              <p>Detailed insights on learner performance trends, weak topics, and personalized improvement
+                recommendations</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🎯</span>
+              <h4>Adaptive Mock Exams</h4>
+              <p>Dynamically adjust exam difficulty based on learner performance history for personalized practice</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🔗</span>
+              <h4>LMS Integrations</h4>
+              <p>Connect with popular Learning Management Systems like Moodle and Google Classroom for seamless
+                content sync</p>
+            </div>
+            <div class="future-item">
+              <span class="future-icon">🏆</span>
+              <h4>Gamification</h4>
+              <p>Add leaderboards, achievement badges, and streak tracking to boost learner engagement and motivation
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
+
 </section>

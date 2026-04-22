@@ -84,34 +84,40 @@ Before you begin, ensure you have the following installed:
    
    Create your MySQL database and configure the connection in the `.env` file.
 
-## 🎯 Running the Application
+## 📧 Contact Form Setup (Frontend Only)
 
-### Start the Backend Server
+This project uses **EmailJS** for the contact form, so **no backend server is required**.
 
-```bash
-cd server
-npm start
+### 1. Get Your Keys (Free)
+1. Sign up at [EmailJS.com](https://www.emailjs.com/).
+2. Create a **Service** (connect your Gmail). -> Get `Service ID`
+3. Create a **Template** (design your email). -> Get `Template ID`
+4. Go to Account > General. -> Get `Public Key`
+
+### 2. Configure Project
+Open `client/src/app/components/home/home.component.ts` and replace the placeholders:
+
+```typescript
+const serviceID = 'YOUR_SERVICE_ID';
+const templateID = 'YOUR_TEMPLATE_ID';
+const publicKey = 'YOUR_PUBLIC_KEY';
 ```
 
-The server will run on `http://localhost:3000` (or your configured PORT).
+Done! The contact form will now send emails directly from the browser.
 
-### Start the Frontend Client
+## 🚀 Installation & Running
+1. **Clone the repo**
+   ```bash
+   git clone <your-repo-url>
+   cd PortFolio_1/client
+   ```
 
-```bash
-cd client
-npm start
-```
-
-The Angular development server will run on `http://localhost:4200/`.
-
-> **Note**: The client is configured with the `--openssl-legacy-provider` flag to ensure compatibility with Node.js 17+ and Angular 11's Webpack 4.
-
-### Access the Application
-
-Open your browser and navigate to:
-```
-http://localhost:4200/
-```
+2. **Install & Run**
+   ```bash
+   npm install
+   npm start
+   ```
+   Navigate to `http://localhost:4200/`.
 
 ## 📁 Project Structure
 

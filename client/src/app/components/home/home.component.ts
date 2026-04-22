@@ -252,13 +252,15 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
   skills = [
     { name: 'React', level: 80 },
     { name: 'Node.js / Express', level: 80 },
+    { name: 'Python', level: 80 },
     { name: 'Angular / TypeScript', level: 80 },
     { name: 'C', level: 80 },
-    { name: 'Python', level: 75 },
     { name: 'Java', level: 70 },
     { name: 'MySQL / REST APIs', level: 85 },
     { name: 'Git', level: 85 },
-    { name: 'Responsive Architecture', level: 88 }
+    { name: 'Responsive Architecture', level: 88 },
+    { name: 'Vercel', level: 75 },
+    { name: 'Render', level: 75 },
   ];
 
   // Send Email via EmailJS (Frontend Only)
